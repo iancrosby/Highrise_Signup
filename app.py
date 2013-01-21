@@ -25,7 +25,9 @@ def add_hr():
 	e_mail = request.args.get('e_mail')
 	company = request.args.get('company')
 	country = request.args.get('country')
-	return jsonify(result=first_name + " " + last_name + " " + country)
+	
+	return render_template('index.html')
+	#return jsonify(result=first_name + " " + last_name + " " + country)
 
 
 if __name__ == '__main__':
