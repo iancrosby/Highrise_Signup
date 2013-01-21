@@ -23,15 +23,25 @@ def add_hr():
 	country = request.args.get('country')
 	
 	p = pyrise.Person()
-	p.first_name = 'JSON TEST'
-	p.last_name = "Yippee"
-	p.contact_data.email_addresses.append(pyrise.EmailAddress(address="joe@schmoe.com"))
+	
+	if type(first_name) == str:
+		p.first_name = first_name
+	
+	if type(last_name) == str:
+		p.last_name = last_name
+		
+	if type(e_mail) == str:
+		p.contact_data.email_addresses.append(pyrise.EmailAddress(address=e_mail))
+	
+	#if type(company) == str:
+	#	p.company = company
+	
+	#if type(country) == str:
+	#	p.country = country
+	
 	p.save()
-	
-	
-	
-	return render_template('index.html')
-	#return jsonify(result=first_name + " " + last_name + " " + country)
+
+	return jsonify(result=first_name + " " + last_name + " " + country)
 
 
 if __name__ == '__main__':
