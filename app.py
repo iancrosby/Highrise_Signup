@@ -7,11 +7,7 @@ import pyrise
 pyrise.Highrise.set_server('https://testingaccount1.highrisehq.com/')
 pyrise.Highrise.auth('8d067f661c6611c3c3e40b245dd9de37')
  
-p = pyrise.Person()
-p.first_name = 'My_first_test'
-p.last_name = "Yippee"
-p.contact_data.email_addresses.append(pyrise.EmailAddress(address="joe@schmoe.com"))
-p.save()
+
 
 
 @app.route('/')
@@ -25,6 +21,14 @@ def add_hr():
 	e_mail = request.args.get('e_mail')
 	company = request.args.get('company')
 	country = request.args.get('country')
+	
+	p = pyrise.Person()
+	p.first_name = 'JSON TEST'
+	p.last_name = "Yippee"
+	p.contact_data.email_addresses.append(pyrise.EmailAddress(address="joe@schmoe.com"))
+	p.save()
+	
+	
 	
 	return render_template('index.html')
 	#return jsonify(result=first_name + " " + last_name + " " + country)
