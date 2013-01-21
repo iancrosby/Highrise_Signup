@@ -30,8 +30,8 @@ def add_hr():
 	p.add_note('Company name: ' + company + ", located in " + country)
 	
 	my_id = p.party_id
-	p.add_note('party id is ' + my_id)
-	
+	p.add_note('party id is ')
+	p.add_note(str(my_id))
 
 	return jsonify(result=first_name + " " + last_name + " " + country)
 
