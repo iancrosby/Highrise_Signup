@@ -2,7 +2,7 @@ import os
 from flask import Flask, jsonify, render_template, request
 app = Flask(__name__)
 
-# import pyrise
+import pyrise
 
 ''' pyrise.Highrise.set_server('https://testingaccount1.highrisehq.com/')
 pyrise.Highrise.auth('8d067f661c6611c3c3e40b245dd9de37')
