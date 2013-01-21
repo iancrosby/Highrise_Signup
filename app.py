@@ -5,16 +5,18 @@ app = Flask(__name__)
 import pyrise
 
 ''' pyrise.Highrise.set_server('https://testingaccount1.highrisehq.com/')
- pyrise.Highrise.auth('8d067f661c6611c3c3e40b245dd9de37')'''
+pyrise.Highrise.auth('8d067f661c6611c3c3e40b245dd9de37')
+ 
+p = pyrise.Person()
+p.first_name = 'My_first_test'
+p.last_name = "Yippee"
+p.contact_data.email_addresses.append(pyrise.EmailAddress(address="joe@schmoe.com"))
+p.save()'''
 
-'''@app.route('/')
+
+@app.route('/')
 def index():
-    p = pyrise.Person()
-    p.first_name = 'My_first_test'
-    p.last_name = "Yippee"
-    p.contact_data.email_addresses.append(pyrise.EmailAddress(address="joe@schmoe.com"))
-    p.save()
-    return null'''
+	return render_template('index.html')
     
 @app.route('/add_to_highrise')
 def add_hr():
