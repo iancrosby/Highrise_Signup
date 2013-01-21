@@ -24,6 +24,7 @@ def add_hr():
 	p.first_name = first_name
 	p.last_name = last_name		
 	p.contact_data.email_addresses.append(pyrise.EmailAddress(address=e_mail))
+	p.location = country
 	
 	p.save()
 	p.add_note('Company name: ' + company + ", located in " + country)
