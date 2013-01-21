@@ -23,6 +23,9 @@ def add_hr():
 	country = request.args.get('country')
 	
 	p = pyrise.Person()
+	p.first_name = "first_name failed"
+	p.last_name = "last_name failed"		
+	p.contact_data.email_addresses.append(pyrise.EmailAddress(address="email@failed.cc"))
 	
 	if type(first_name) == str:
 		p.first_name = first_name
