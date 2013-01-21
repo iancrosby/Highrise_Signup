@@ -4,18 +4,26 @@ app = Flask(__name__)
 
 import pyrise
 
-pyrise.Highrise.set_server('https://testingaccount1.highrisehq.com/')
-pyrise.Highrise.auth('8d067f661c6611c3c3e40b245dd9de37')
+''' pyrise.Highrise.set_server('https://testingaccount1.highrisehq.com/')
+ pyrise.Highrise.auth('8d067f661c6611c3c3e40b245dd9de37')'''
 
-@app.route('/')
+'''@app.route('/')
 def index():
     p = pyrise.Person()
     p.first_name = 'My_first_test'
     p.last_name = "Yippee"
     p.contact_data.email_addresses.append(pyrise.EmailAddress(address="joe@schmoe.com"))
     p.save()
-    return null
-
+    return null'''
+    
+@app.route('/add_to_highrise')
+def add_hr():
+	first_name = request.args.get('first_name')
+	last_name = request.args.get('last_name')
+	e_mail = request.args.get('e_mail')
+	company = request.args.get('company')
+	country = request.args.get('country')
+	return jsonify(result=first_name + " " + last_name + " " + country)
 
 
 if __name__ == '__main__':
