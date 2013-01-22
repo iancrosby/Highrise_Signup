@@ -24,6 +24,11 @@ def index():
 	return render_template('index.html')
 
 
+@app.route('/test')
+def test_app():
+	return render_template('test.html')
+
+
 @app.route('/add_to_highrise')
 def add_hr():
 	'''Receives a signup request from JSON, sends it to Highrise with attached signup tasks'''
